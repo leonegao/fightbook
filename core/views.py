@@ -8,6 +8,9 @@ from django.contrib.auth.decorators import login_required
 import magic
 from itertools import chain
 import random
+from ffmpeg import input, output
+from django.core.files.temp import NamedTemporaryFile
+
 
 def validationFiles(file):
     accept = ['video/mp4']
@@ -159,6 +162,9 @@ def upload(request):
     else:
         return redirect('/')
 
+
+
+
 @login_required(login_url='signin')
 def profile(request, pk):
     user_object = User.objects.get(username=pk)
@@ -275,3 +281,13 @@ def videos(request):
     posts= Post.objects.all()
 
     return render(request,'allVideos.html',{'user_profile':user_profile, 'posts': posts})
+@login_required(login_url='signin')
+def uploads(request):
+    user_object = User.objects.get(username=request.user.username)
+    user_profile = Profile.objects.get(user=user_object)
+    return render(request,'delete.html',{'user_profile':user_profile})
+@login_required(login_url='signin')
+def searchFighter(request):
+    user_object = User.objects.get(username=request.user.username)
+    user_profile = Profile.objects.get(user=user_object)
+    return render(request,'searchFighter.html',{'user_profile':user_profile})

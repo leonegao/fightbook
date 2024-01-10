@@ -20,6 +20,10 @@ class Profile(models.Model):
     def __str__(self):
         return self.user.username
 
+    def deleteimage(self):
+        self.profile_images.delete()
+        super().delete()
+
 class Post(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     user = models.CharField(max_length=100)
@@ -30,8 +34,9 @@ class Post(models.Model):
 
     def __str__(self):
         return self.user
-    def user_profile_image(self):
-        return self.user.profile.profileimg
+    def delete(self):
+        self.videos.delete()
+        super().delete()
 
 
 class FollowersCount(models.Model):

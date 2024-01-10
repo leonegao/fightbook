@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "storages",
     'core',
 ]
 
@@ -135,4 +136,16 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL= '/media/'
-MEDIA_ROOT= os.path.join(BASE_DIR,'media')
+MEDIA_ROOT= os.path.join(BASE_DIR,'staticgit init')
+
+
+AWS_ACCESS_KEY_ID = 'AKIA6GBMGMVADUKHJ7XV'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'warriobucket'
+AWS_S3_SIGNATURE_NAME = 's3v4',
+AWS_S3_REGION_NAME = 'eu-north-1'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL =  None
+AWS_S3_VERITY = True
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_QUERYSTRING_EXPIRE = 600

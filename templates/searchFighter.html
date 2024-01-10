@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'favicon.png' %}" rel="icon" type="image/png">
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/uikit.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/tailwind.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+            <header>
+                <div class="header_inner">
+                    <form action="/search" method="POST">
+                        {% csrf_token %}
+                        <div class="left-side">
+                            <!-- Logo -->
+                            <div id="logo" class=" uk-hidden@s">
+                                <a href="/">
+                                    <b><h1 style="text-transform: uppercase;">Fight Book</h1></b>
+                                </a>
+                            </div>
+
+                            <!--<div class="triger" uk-toggle="target: #wrapper ; cls: sidebar-active">
+                                <i class="uil-bars"></i>
+                            </div>-->
+
+                            <!-- <div class="header_search"> -->
+                                <input type="text" name="username" placeholder="Search for username..">&nbsp; &nbsp;
+                                <button type="submit"><i class="fa fa-search fa-1x"></i></button>
+
+                            <!-- </div> -->
+
+                        </div>
+                        </form>
+                    <div class="right-side lg:pr-4">
+                        <a href="#">
+                            <img src="{{ user_profile.profileimg.url }}" class="header-avatar" alt="">
+                        </a>
+                        <div uk-drop="mode: click;offset:9" class="header_dropdown profile_dropdown border-t">
+                            <ul>
+                                <li><a href="/settings"> Account setting </a> </li>
+                                <!-- <li><a href="explore.html">explore </a> </li> -->
+                                <li><a href="/logout"> Log Out</a></li>
+                                <li><a href="/upload"> Upload videos</a></li>
+
+                            </ul>
+                        </div>
+                            <!-- notification contents -->
+                            <div class="flex justify-center flex-center text-center">
+
+                                <div class="flex flex-col choose-upload text-center">
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+
+            </header>
+
+
+
+
+ <!-- Scripts
+    ================================================== -->
+    <script src="{% static 'assets/js/tippy.all.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/uikit.js' %}"></script>
+    <script src="{% static 'assets/js/simplebar.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+
+    <script src="{% static '../../unpkg.com/ionicons%405.2.3/dist/ionicons.js' %}"></script>
+</body>
+
+
+</html>

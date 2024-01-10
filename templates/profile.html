@@ -30,11 +30,8 @@
 				<form action="/follow" method="POST">
 					{% csrf_token %}
 					<div class="add-btn">
-
-					<span style="color: white; font-size: 25px; margin-right: 300px;"><b><u><a href="/">Home</a></u></b></span>
-
 					{% if user_post_length == 0 %}
-					<span style="color: white; font-size: 27px;"><b>No Post</b></span>
+					<span style="color:white; font-size: 27px;"><b>No Post</b></span>
 					{% elif user_post_length == 1 %}
 					<span style="color: white; font-size: 27px;"><b>{{user_post_length}} Post</b></span>
 					{% else %}
@@ -42,13 +39,13 @@
 					{% endif %}
 
 					{% if user_followers == 0 or user_followers == 1 %}
-					<span style="color: white; font-size: 27px;"><b>{{user_followers}} follower</b></span>
+					<span style="color: white; font-size: 27px;font-family: cursive;"><b>{{user_followers}} follower</b></span>
 					{% else %}
-					<span style="color: white; font-size: 27px;"><b>{{user_followers}} followers</b></span>
+					<span style="color: white; font-size: 27px;font-family: cursive;"><b>{{user_followers}} followers</b></span>
 					{% endif %}
 
 
-					<span style="color: white; font-size: 27px;"><b>{{user_following}} following</b></span>
+					<span style="color: white; font-size: 27px;font-family: cursive;"><b>{{user_following}} following</b></span>
 
 					<input type="hidden" value="{{user.username}}" name="follower" />
 					<input type="hidden" value="{{user_object.username}}" name="user" />
@@ -56,7 +53,7 @@
 					{% if user_object.username == user.username %}
 					<a href="/settings" data-ripple="">Account Settings</a>
 					{% else %}
-					<a data-ripple=""><button type="submit" style="background-color: #ffc0cb; border: #ffc0cb;">{{button_text}}</button></a>
+					<a data-ripple=""><button type="submit" style="background-color: #ffc0cb; border: #ffc0cb;font-family: cursive;">{{button_text}}</button></a>
 					{% endif %}
 					</div>
 				</form>
@@ -74,7 +71,7 @@
 							<div class="user-avatar">
 								<figure>
 									<!--<img src="{{user_profile.profileimg.url}}" style="height: 250px; width: 100%;" alt="">-->
-									<img src="{{user_profile.profileimg.url}}"  alt="">
+									<img src="{{user_profile.profileimg.url}}" style="border-radius: 50%;" alt="">
 									<!--<form class="edit-phto" action="/settings">
 										<i class="fa fa-camera-retro"></i>
 										<label class="fileContainer">
@@ -121,6 +118,8 @@
 		<section>
 			<div class="bio">
 					{{user_profile.bio}}
+					<span style="color: blue; font-size: 25px; margin-right: 300px;"><b><u><a href="/">Home</a></u></b></span>
+
 			</div>
 		</section>
 
@@ -138,14 +137,6 @@
 
 								</aside>
 							</div><!-- sidebar -->
-
-
-
-
-
-
-
-
 
 
 							<div class="col-lg-6">

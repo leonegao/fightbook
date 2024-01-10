@@ -14,6 +14,8 @@ urlpatterns = [
     path('search',views.search,name='search'),
     path('delete_post/<uuid:uuid>/', views.delete_post, name='delete_post'),
     path('videos',views.videos,name='videos'),
+    path('uploads',views.uploads,name='uploads'),
+    path('searchFighter',views.searchFighter,name='searchFighter'),
 
 
 ]

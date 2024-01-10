@@ -11,6 +11,7 @@
     <title>Search</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/uikit.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
@@ -27,7 +28,7 @@
                         <!-- Logo -->
                         <div id="logo" class=" uk-hidden@s">
                             <a href="/">
-                                <!-- <b><h1 style="text-transform: uppercase;">Social Book</h1></b> -->
+                                <b><h1 style="text-transform: uppercase;">Fightbook</h1></b>
                             </a>
                         </div>
 
@@ -36,10 +37,9 @@
                         </div>-->
 
                         <!-- <div class="header_search"> -->
-                            
-                                <input type="text" name="username" placeholder="Search for username..">&nbsp; &nbsp;
-                                <button type="submit"><i class="fa fa-search fa-1x"></i></button>
-                            
+
+
+
                             <!-- <div class="icon-search">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor">
@@ -50,9 +50,9 @@
                         <!-- </div> -->
 
                     </div>
-                    
-                    
-                     
+
+
+
                     <div class="right-side lg:pr-4">
 
                          <!-- upload -->
@@ -63,17 +63,17 @@
                         </a>-->
                          <!-- upload dropdown box -->
                         <!--<div uk-dropdown="pos: top-right;mode:click ; animation: uk-animation-slide-bottom-small" class="header_dropdown">
-    
-                            
+
+
                             <div class="px-4 py-3 -mx-5 -mt-4 mb-5 border-b">
                                 <h4>Upload Pics or Videos</h4>
                             </div>
-    
-                            
+
+
                             <div class="flex justify-center flex-center text-center">
-    
+
                                 <div class="flex flex-col choose-upload text-center">
-                                   
+
                                     <div class="bg-gray-100 border-2 border-dashed flex flex-col h-24 items-center justify-center relative w-full rounded-lg  ">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-12">
                                             <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
@@ -87,12 +87,12 @@
                                         <input type="file">
                                         <a href="#" class="button soft-warning small"> Choose pics</a>
                                     </div>
-    
+
                                     <a href="#" class="uk-text-muted mt-3 uk-link"
                                         uk-toggle="target: .choose-upload ;  animation: uk-animation-slide-right-small, uk-animation-slide-left-medium; queued: true">
                                         Or Import Video </a>
                                 </div>-->
-    
+
                                 <!--<div class="uk-flex uk-flex-column choose-upload" hidden>
                                     <div class="mx-auto flex flex-col h-24 items-center justify-center relative w-full rounded-lg">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-12">
@@ -111,13 +111,13 @@
                                         uk-toggle="target: .choose-upload ; animation: uk-animation-slide-left-small, uk-animation-slide-right-medium; queued: true">
                                         Or Upload Video </a>
                                 </div>-->
-    
+
                             <!--</div>-->
                             <!--<div class="px-4 py-3 -mx-5 -mb-4 mt-5 border-t text-sm">
                                 Your File size Must be Maxmium 999MB
                             </div>-->
                         <!--</div>-->
-                        
+
                          <!-- Notification -->
 
                         <!--<a href="#" class="header-links-item">
@@ -133,14 +133,14 @@
                                         <div class="drop_avatar"> <img src="{% static 'assets/images/avatars/avatar-1.jpg' %}" alt="">
                                         </div>
                                         <div class="drop_content">
-                                            <p> <strong class="text-link" >Taiye</strong>  
+                                            <p> <strong class="text-link" >Taiye</strong>
                                                 <span class="text-link"> is following you  </span>
                                             </p>
                                             <span class="time-ago"> 2 hours ago </span>
                                         </div>
                                     </a>
                                 </li>
-                                
+
 
                             </ul>
                             <a href="#" class="see-all">See all</a>
@@ -166,7 +166,7 @@
                                         </div>
                                     </a>
                                 </li>
-                                
+
 
 
                             </ul>
@@ -174,12 +174,9 @@
                         </div>-->
 
                         <!-- profile -->
-                        
 
-                        <!-- welcome user -->
-                        <a href="#" class="">
-                            Welcome <b name="" class="">{{user.username}}&nbsp; &nbsp; &nbsp;</b>
-                        </a>
+
+
                         <a href="#">
                             <img src="{{ user_profile.profileimg.url }}" class="header-avatar" alt="">
                         </a>
@@ -188,16 +185,21 @@
                                 <li><a href="/settings"> Account setting </a> </li>
                                 <!-- <li><a href="explore.html">explore </a> </li> -->
                                 <li><a href="/logout"> Log Out</a></li>
+                                <li><a href="/upload"> Upload videos</a></li>
+                                <li><a href="searchFighter"> Search</a></li>
+                                <li><a href="/">Home</a></li>
+
                             </ul>
                         </div>
 
                     </div>
                 </div>
-            </header>
             </form>
-            
+            </header>
+
+
             <div style="margin-left: 250px; margin-right: 250px;">
-                
+
                 <style>
                 body{margin-top:20px;
                 background-color: #FFF;
@@ -304,11 +306,7 @@
 
                 <div class="container">
                 <div class="row ng-scope">
-                    <div class="col-md-3 col-md-push-9">
-                       <h4> <a href="/">
-                            <h5>Home</h5> 
-                         </a></h4>
-                        </div>
+
                         <br><br>
                         <h4>Results For <span class="fw-semi-bold"><b>{{username}}</b></span></h4>
                         <br>
@@ -328,17 +326,16 @@
                     </div>
                     <div class="col-md-9 col-md-pull-3">
                         <!-- <p class="search-results-count">About 94 700 000 (0.39 sec.) results</p> -->
-                        
                         {% for users in username_profile_list %}
+
                         <section class="search-result-item">
-                            <a class="image-link" href="/profile/{{users.user}}"><img class="image" src="{{users.profileimg.url}}">
-                                
-                            </a>
+
                             <div class="search-result-item-body">
                                 <div class="row">
                                     <div class="col-sm-9">
-                                        <h4 class="search-result-item-heading"><a href="/profile/{{users.user}}"><b>@{{users.user}}</b></a></h4>
-                                        
+                                        <a class="image-link" href="/profile/{{users.user}}"><img src="{{users.profileimg.url}}" ></a>
+                                        <h4 class="search-result-item-heading" ><a href="/profile/{{users.user}}"><b>@{{users.user}}</b></a></h4>
+
 
                                         <p class="info">{{users.location}}</p>
                                         <p class="description">{{users.bio}}</p>
@@ -351,7 +348,7 @@
                             </div>
                         </section>
                         {% endfor %}
-                        
+
                         <!-- <div class="text-align-center">
                             <ul class="pagination pagination-sm">
                                 <li class="disabled"><a href="#">Prev</a>
@@ -388,7 +385,7 @@
 
  <!-- Scripts
     ================================================== -->
-    <script src="{% static 'assets/js/tippy.all.min.js' %}"></script>  
+    <script src="{% static 'assets/js/tippy.all.min.js' %}"></script>
     <script src="{% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'assets/js/uikit.js' %}"></script>
     <script src="{% static 'assets/js/simplebar.js' %}"></script>
