@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-5l@4u6cs3-pfdw3kf^%ttu%ax03+z%ps+-_d5f=5hb=-*k*uts
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -84,12 +84,22 @@ DATABASES = {
     }
 }
 '''
+'''
 DATABASES = {
     'default': dj_database_url.config(
         default="sqlite:///"+os.path.join(BASE_DIR,"db.sqlite3")
     )
-
-
+}
+'''
+DATABASE={
+    'default':{ 
+    'ENGINE':'django.db.backends.postgresql_psycopg2',
+    'NAME':'fightbookdb',
+    'USER':'leonegao',
+    'PASSWORD':'0250'
+    'HOST':'localhost',
+    'PORT':'543',
+   }
 }
 
 
@@ -136,7 +146,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL= '/media/'
-MEDIA_ROOT= os.path.join(BASE_DIR,'staticgit init')
+MEDIA_ROOT= os.path.join(BASE_DIR,'media')
 
 
 AWS_ACCESS_KEY_ID = 'AKIA6GBMGMVADUKHJ7XV'
