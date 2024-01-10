@@ -96,7 +96,7 @@ DATABASE={
     'ENGINE':'django.db.backends.postgresql_psycopg2',
     'NAME':'fightbookdb',
     'USER':'leonegao',
-    'PASSWORD':'0250'
+    'PASSWORD':'0250',
     'HOST':'localhost',
     'PORT':'543',
    }
